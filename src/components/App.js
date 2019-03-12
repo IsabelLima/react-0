@@ -15,24 +15,17 @@ class App extends Component {
     };
   }
 
-/*   getValueInput (evt) {
-    const inputValue = evt.target.value;
-    this.setState({ input: inputValue });
-    this.filterRecipes(inputValue);
-  }
-  
   filterRecipes (searchString) {
-    const { recipes } = this.state;
     this.setState({
-      filteredRecipes: recipes.filter(item => 
+      filteredRecipes: this.state.recipes.filter(item => 
          item.title.includes(searchString))
     });
   }
- */
+ 
   render() { 
     return (
       <div className="App">
-        <Navbar />
+        <Navbar functionOnchange={this.filterRecipes}/>
         <div className="container mt-10">
           <div className="row">
             {this.state.filteredRecipes.map((item, i) => {
