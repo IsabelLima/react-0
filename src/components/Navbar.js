@@ -9,8 +9,7 @@ const Navbar = ( props ) => (
 
         <div className="form-group justify-content-center row col-10 my-2">
             <input
-                value=""
-                onChange={(e) => { props.functionOnchange(e.target.value)}}
+                onChange={props.functionOnchange}
                 className="form-control col-9 mr-2"
                 type="search"
                 placeholder="Search"

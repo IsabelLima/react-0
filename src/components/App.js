@@ -9,16 +9,17 @@ class App extends Component {
 
     this.recipes = recipes.results;
     this.state = {
-      recipes,
+      recipes: this.recipes,
       searchString: '',
       filteredRecipes : this.recipes
     };
   }
 
-  filterRecipes (searchString) {
+  filterRecipes = (searchString) => {
+    this.filterRecipes = this.filterRecipes.bind(this);
     this.setState({
       filteredRecipes: this.state.recipes.filter(item => 
-         item.title.includes(searchString))
+         item.title.includes(searchString.target.value))
     });
   }
  
