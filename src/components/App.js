@@ -19,7 +19,9 @@ class App extends Component {
     this.filterRecipes = this.filterRecipes.bind(this);
     this.setState({
       filteredRecipes: this.state.recipes.filter(item => 
-         item.title.includes(searchString.target.value))
+         item.title.toString().toLowerCase().includes(searchString.target.value.toString().toLowerCase())
+         || item.ingredients.toString().toLowerCase().includes(searchString.target.value.toString().toLowerCase())
+         )
     });
   }
  
