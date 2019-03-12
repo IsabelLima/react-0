@@ -13,6 +13,7 @@ describe('RecipeItem', () => {
         const i = 0;
         const wrapper = mount(<RecipeItem recipe={item} key={i}/>);
         expect(wrapper.is('RecipeItem')).toBeTruthy();
+        wrapper.unmount();
     })
 
     // Add more tests here
